@@ -9,11 +9,12 @@ import os
 embedding_model = SentenceTransformer("sentence-transformers/all-MiniLM-L6-v2")
 
 # Load vector store
-def load_faiss_index(index_path="vector_store/faiss_index/faiss.index", metadata_path="vector_store/faiss_index/metadata.pkl"):
+def load_faiss_index(index_path="FAISS_Index/faiss.index", metadata_path="FAISS_Index/metadata.pkl"):
     try:
         index = faiss.read_index(index_path)
         with open(metadata_path, "rb") as f:
             metadata = pickle.load(f)
+        print(f"Loaded index with {index.ntotal} vectors and metadata with {len(metadata)} records.")
         return index, metadata
     except Exception as e:
         print(f"Error loading vector store: {e}")
