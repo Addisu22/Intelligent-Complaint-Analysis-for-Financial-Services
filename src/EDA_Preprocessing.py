@@ -24,7 +24,7 @@ def load_data(path, chunksize=100_000, max_chunks=None):
         chunks = []
         for i, chunk in enumerate(chunk_iter):
             chunks.append(chunk)
-            print(f"Loaded chunk {i+1} with shape {chunk.shape}")
+            # print(f"Loaded chunk {i+1} with shape {chunk.shape}")
             if max_chunks and i + 1 >= max_chunks:
                 break
 
