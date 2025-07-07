@@ -1,0 +1,3 @@
+We used LangChain’s RecursiveCharacterTextSplitter with chunk_size=300 and chunk_overlap=50. This approach ensures semantic coherence while preventing important context from being lost between chunks. Smaller chunks (e.g., 150) led to too much fragmentation, while larger ones (e.g., 600) reduced retrieval accuracy.
+
+We selected 300–50 as a balanced setting after testing embedding quality and chunk retrievability on sample narratives.
